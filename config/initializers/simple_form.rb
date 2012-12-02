@@ -149,20 +149,14 @@ SimpleForm.setup do |config|
     end
   end
 
-  config.wrappers :theme_input, :tag => 'div', :class => 'form-row', :error_class => 'error' do |b|
-    
+  config.wrappers :theme_input, :tag => 'div', :class => 'form-row' do |b|
     b.use :label
-
     b.wrapper :tag => 'div', :class => 'form-right' do |ba|
       ba.use :input
     end
-
     b.wrapper :tag => 'div', :class => 'clear' do |baa|
-
+    
     end
-
-
   end
-
 
 end

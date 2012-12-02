@@ -6,7 +6,7 @@
                     <li><a href="#" title=""><img src="/assets/user_header.png" alt="" /><span>Profile</span></a></li>
                     <li><a href="#" title=""><img src="/assets/icons/topnav/tasks.png" alt="" /><span>Tasks</span></a></li>  
                     <li><a href="#" title=""><img src="/assets/icons/topnav/settings.png" alt="" /><span>Settings</span></a></li>
-                    <li><a href="login.html" title=""><img src="/assets/icons/topnav/logout.png" alt="" /><span>Logout</span></a></li>
+                    <li><%= link_to content_tag(:span, "Logout"), destroy_user_session_path, :method => :delete %></li>
                 </ul>
             </div>
             <div class="clear"></div>

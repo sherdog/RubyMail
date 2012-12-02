@@ -1,6 +1,4 @@
-
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :id ="validate", :html { :class => "form" }) do |f| %>
-
 <div class="login-wrapper">
     <div class="login-logo"><img src="assets/logo.png" alt="" /></div>
     <div class="widget">
@@ -24,10 +22,5 @@
         </form>
     </div>
 </div>    
-
-
-
-
 <% end %>
-
 <%= render "users/shared/links" %>
