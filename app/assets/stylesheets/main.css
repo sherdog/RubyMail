@@ -1385,18 +1385,28 @@ ul.sub li ul li {
 }
 
 .inner-navigation ul li a {
-	width: 55px;
-	height: 45px;
+	width: 110px;
+	height: 35px;
 	display: block;
+	padding:5px;
 	cursor: pointer;
 	background-color: #f0f6f8;
 	box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.2);
-	font-size: 10px;
+	font-size: 20px;
+	
 	color: #69767E;
 }
 
-.inner-navigation ul li a:hover {
+.inner-navigation ul li a:hover, .inner-navigation ul li a.current_step {
 	background: #fff;
+}
+.inner-navigation ul li a.step_complete {
+	background: green;
+	color:white;
+}
+.inner-navigation ul li a.step_incomplete {
+	background: red;
+	color:white;
 }
 
 .inner-navigation ul li a:active {
@@ -5916,6 +5926,7 @@ ul.breadcrumbs li ul li a:hover {
 
 	.inner-navigation ul li a {
 		width: 100%;
+		font-size:19px;
 	}
 
 	.inner-navigation ul li a span.files {

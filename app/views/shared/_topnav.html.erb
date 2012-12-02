@@ -3,7 +3,8 @@
             <div class="welcome"><a href="#" title=""><img src="/assets/user_header.png" alt="" /></a><span>Welcome Administrator!</span></div>
             <div class="user-navigation">
                 <ul>
-                    <li><a href="#" title=""><img src="/assets/user_header.png" alt="" /><span>Profile</span></a></li>
+                    <li><%= link_to image_tag("user_header.png")+content_tag(:span, "Profile"), edit_user_registration_path %>
+                        </li>
                     <li><a href="#" title=""><img src="/assets/icons/topnav/tasks.png" alt="" /><span>Tasks</span></a></li>  
                     <li><a href="#" title=""><img src="/assets/icons/topnav/settings.png" alt="" /><span>Settings</span></a></li>
                     <li><%= link_to content_tag(:span, "Logout"), destroy_user_session_path, :method => :delete %></li>
