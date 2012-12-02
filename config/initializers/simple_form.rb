@@ -138,5 +138,31 @@ SimpleForm.setup do |config|
   # config.inputs_discovery = true
 
   # Cache SimpleForm inputs discovery
-  # config.cache_discovery = !Rails.env.development?
+
+  config.wrappers :inline_checkbox, :tag => 'div', :class => 'control-group', :error_class => 'error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.wrapper :tag => 'div', :class => 'controls' do |ba|
+      ba.use :label_input, :wrap_with => { :class => 'checkbox inline' }
+      ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
+      ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
+    end
+  end
+
+  config.wrappers :theme_input, :tag => 'div', :class => 'form-row', :error_class => 'error' do |b|
+    
+    b.use :label
+
+    b.wrapper :tag => 'div', :class => 'form-right' do |ba|
+      ba.use :input
+    end
+
+    b.wrapper :tag => 'div', :class => 'clear' do |baa|
+
+    end
+
+
+  end
+
+
 end

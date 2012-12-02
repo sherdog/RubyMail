@@ -3,14 +3,17 @@
 class CampaignsController < ApplicationController
   # GET /campaigns
   before_filter :authenticate_user!
+  
   # GET /campaigns.json
   def index
+
     @campaigns = Campaign.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @campaigns }
     end
+
   end
 
   # GET /campaigns/1

@@ -1,35 +1,46 @@
-<h1>Listing campaigns</h1>
+    <!-- Title area -->
+    <div class="intro-area">
+        <div class="wrapper">
+            <div class="page-title">
+                <h5>Campaigns</h5>
+            </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>From name</th>
-    <th>From email</th>
-    <th>Replyto mail</th>
-    <th>Datesent</th>
-    <th>Tags</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+            <div class="widget">
+                    <div class="title">
+                        <span class="title-icon">
+                            <input id="title-checkbox" type="checkbox" name="title-checkbox">
+                        </span>
+                        <h6>Latest Campaigns</h6>
+                    </div>
+                    <table cellpadding="0" cellspacing="0" width="100%" class="standard-table">
+                        <thead>
+                            <tr>
+                                <td width="20">&nbsp;</td>
+                                <td width="180">Type</td>
+                                <td>Subject</td>
+                                <td width="80">Views/Total</td>
+                                <td width="80">Rate</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                       <% @campaigns.each do |campaign| %>
+                        <tr>
+                            <td><input type="checkbox" name="campaign_chk[]" /></td>
+                            <td><%= campaign.tags %></td>
+                            <td><%= campaign.subject %></td>
+                            <td align="center"><a href="#" title="" class="range-link">68</a>/<a href="#" title="" class="range-link">240</a></td>
+                            <td><span class="stats-pos">0.50%</span></td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>   
+             </div>
+            <!-- end latest campaigns widget -->
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    
 
-<% @campaigns.each do |campaign| %>
-  <tr>
-    <td><%= campaign.title %></td>
-    <td><%= campaign.from_name %></td>
-    <td><%= campaign.from_email %></td>
-    <td><%= campaign.replyto_mail %></td>
-    <td><%= campaign.datesent %></td>
-    <td><%= campaign.tags %></td>
-    <td><%= campaign.user_id %></td>
-    <td><%= link_to 'Show', campaign %></td>
-    <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
-    <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Campaign', new_campaign_path %>

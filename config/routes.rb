@@ -1,8 +1,13 @@
 CampaignGem::Application.routes.draw do
+  get "dashboard/index"
+
   devise_for :users
 
   resources :campaigns
-  root :to => "campaigns#index"
+  resources :dashboard
+  root :to => "dashboard#index"
+  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
