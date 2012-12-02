@@ -7,7 +7,7 @@
     <ul id="menu" class="nav">
         <li class="dash"><%= link_to content_tag(:span, "Dashboard"), '/dashboard' %></li>
         
-        <li class="forms"><%= link_to content_tag(:span, "Campaigns") + ' ' + content_tag(:strong, '&darr;'), campaigns_path %>
+        <li class="forms"><%= link_to content_tag(:span, "Campaigns") + ' ' + content_tag(:strong, 'v'), campaigns_path %>
             <ul class="sub">
                 <li>
                     <%= link_to "Create New", new_campaign_path %>
@@ -35,4 +35,4 @@
         <li class="files"><a href="file_manager.html" title=""><span>File manager</span></a></li>
       
     </ul>
-</div> 
+</div>

@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function(){
+
+	$('.standard-table tr').hover(
+		function(){
+			$(this).find('.form-row-controls').show();
+		},
+		function(){
+			$(this).find('.form-row-controls').hide();
+		}
+	);
+});

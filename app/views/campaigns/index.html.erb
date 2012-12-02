@@ -20,6 +20,7 @@
                                 <td>Subject</td>
                                 <td width="80">Views/Total</td>
                                 <td width="80">Rate</td>
+                                <td width="180">&nbsp;</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,6 +31,12 @@
                             <td><%= campaign.subject %></td>
                             <td align="center"><a href="#" title="" class="range-link">68</a>/<a href="#" title="" class="range-link">240</a></td>
                             <td><span class="stats-pos">0.50%</span></td>
+                            <td>
+                                <span class="form-row-controls">
+                                    <%= link_to "Edit", edit_campaign_path(campaign) %>
+                                    <%= link_to "Delete", campaign, :method => :delete, :confirm =>"Are you sure you want to delete this?" %>
+                                </span>
+                            </td>
                         </tr>
                         <% end %>
                     </tbody>
