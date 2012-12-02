@@ -1,21 +1,22 @@
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :id ="validate", :html { :class => "form" }) do |f| %>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form' }) do |f| %>
+
 <div class="login-wrapper">
-    <div class="login-logo"><img src="assets/logo.png" alt="" /></div>
+    <%= render "shared/messageblock" %>
     <div class="widget">
-        <div class="title"><img src="/assets/icons/light/user.png" alt="" class="title-icon" /><h6>Admin Login Panel (Type Anything)</h6></div>
+        <div class="title"><img src="/assets/icons/light/user.png" alt="" class="title-icon" /><h6>RubyMail Login</h6></div>
         <form action="index.html" id="validate" class="form">
             <fieldset>
-                <div class="form-row">
-                   <%= f.input :email, :required => false, :autofocus => true %>
-                </div>
                 
-                <div class="form-row">
-                   <%= f.input :password, :required => false %>
-                </div>
+                   <%= f.input :email, :required => true, :autofocus => true, :wrapper => :theme_login_input %>
+               
+                
+                   <%= f.input :password, :required => true, :wrapper => :theme_login_input %>
+               
                 
                 <div class="login-controllers">
-                    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-                    <input type="submit" value="Login" class="login-class" />
+                     <div class="remember-check"><%= f.input :remember_me, :wrapper => :inline_checkbox, :as => :boolean if devise_mapping.rememberable?  %></div>
+                    <%= f.submit "Submit", :class => 'login-class'  %>
                     <div class="clear"></div>
                 </div>
             </fieldset>
@@ -23,4 +24,3 @@
     </div>
 </div>    
 <% end %>
-<%= render "users/shared/links" %>

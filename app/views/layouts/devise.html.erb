@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampaignGem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+</head>
+<body class="nobg login-page">
+<%= render "shared/header" %>
+
+    <%= yield %>
+
+    <!-- Footer line -->
+<div id="footer">
+   <div class="wrapper"></div>
+</div>
+
+</body>
+</html>

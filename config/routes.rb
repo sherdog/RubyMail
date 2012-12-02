@@ -7,7 +7,9 @@ CampaignGem::Application.routes.draw do
   resources :dashboard
   root :to => "dashboard#index"
   
-
+  devise_scope :user do
+    get "sign_in", :to => "devise/sessions#new"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

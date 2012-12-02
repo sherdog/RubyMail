@@ -150,8 +150,22 @@ SimpleForm.setup do |config|
   end
 
   config.wrappers :theme_input, :tag => 'div', :class => 'form-row' do |b|
+
     b.use :label
+
     b.wrapper :tag => 'div', :class => 'form-right' do |ba|
+      ba.use :input
+    end
+    b.wrapper :tag => 'div', :class => 'clear' do |baa|
+    
+    end
+  end
+
+  config.wrappers :theme_login_input, :tag => 'div', :class => 'form-row' do |b|
+    
+    b.use :label
+
+    b.wrapper :tag => 'div', :class => 'login-input' do |ba|
       ba.use :input
     end
     b.wrapper :tag => 'div', :class => 'clear' do |baa|
