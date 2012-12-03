@@ -1,0 +1,26 @@
+== Welcome to RubyMail
+
+Developed with Ruby, RubyMail will be similar to CampaignMonitor/MailChimp emailing system.
+
+Required Gems:
+
+mysql2
+devise
+
+For MySQL to work correctly, download the connector-c .dll from:
+http://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-noinstall-6.0.2-win32.zip/from/pick
+
+Placse the mysqllib.dll into your Ruby193/bin folder
+
+-- Install:
+	do a bundle install
+	bundle exec rake db:create (might just work with rake db:create)
+     rake db:migrate
+
+And you should be up and running, make sure you  create yourself an account via localhost:3000/sign_up/
+
+== Changlog
+
+== Credits
+Mike Sheridan - Developer
+

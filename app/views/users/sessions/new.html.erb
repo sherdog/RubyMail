@@ -1,0 +1,26 @@
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form' }) do |f| %>
+
+<div class="login-wrapper">
+    <%= render "shared/messageblock" %>
+    <div class="widget">
+        <div class="title"><img src="/assets/icons/light/user.png" alt="" class="title-icon" /><h6>RubyMail Login</h6></div>
+        <form action="index.html" id="validate" class="form">
+            <fieldset>
+                
+                   <%= f.input :email, :required => true, :autofocus => true, :wrapper => :theme_login_input %>
+               
+                
+                   <%= f.input :password, :required => true, :wrapper => :theme_login_input %>
+               
+                
+                <div class="login-controllers">
+                     <div class="remember-check"><%= f.input :remember_me, :wrapper => :inline_checkbox, :as => :boolean if devise_mapping.rememberable?  %></div>
+                    <%= f.submit "Submit", :class => 'login-class'  %>
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>    
+<% end %>

@@ -1,0 +1,53 @@
+    <!-- Title area -->
+    <div class="intro-area">
+        <div class="wrapper">
+            <div class="page-title">
+                <h5>Campaigns</h5>
+            </div>
+
+            <div class="widget">
+                    <div class="title">
+                        <span class="title-icon">
+                            <input id="title-checkbox" type="checkbox" name="title-checkbox">
+                        </span>
+                        <h6>Latest Campaigns</h6>
+                    </div>
+                    <table cellpadding="0" cellspacing="0" width="100%" class="standard-table">
+                        <thead>
+                            <tr>
+                                <td width="20">&nbsp;</td>
+                                <td width="180">Type</td>
+                                <td>Subject</td>
+                                <td width="80">Views/Total</td>
+                                <td width="80">Rate</td>
+                                <td width="50">&nbsp;</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                       <% @campaigns.each do |campaign| %>
+                        <tr>
+                            <td><input type="checkbox" name="campaign_chk[]" /></td>
+                            <td><%= campaign.tags %></td>
+                            <td><%= campaign.subject %></td>
+                            <td align="center"><a href="#" title="" class="range-link">68</a>/<a href="#" title="" class="range-link">240</a></td>
+                            <td><span class="stats-pos">0.50%</span></td>
+                            <td align="right">
+                                <span class="form-row-controls">
+                                    <%= link_to image_tag("icons/edit.png"), edit_campaign_path(campaign) %>
+                                    <%= link_to image_tag("icons/remove.png"), campaign, :method => :delete, :confirm =>"Are you sure you want to delete this?" %>
+                                </span>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>   
+             </div>
+            <!-- end latest campaigns widget -->
+            <div class="clear"></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </div>
+    </div>
+    
+    
+
+
+

@@ -1,0 +1,38 @@
+<div id="side-navigation">
+    <div class="logo">
+        <a href="index.html"><img src="/assets/logo.png" alt="" /></a>
+    </div>
+
+    <!-- Left navigation -->
+    <ul id="menu" class="nav">
+        <li class="dash"><%= link_to content_tag(:span, "Dashboard"), '/dashboard' %></li>
+        
+        <li class="forms"><%= link_to content_tag(:span, "Campaigns") + ' ' + content_tag(:strong, 'v'), campaigns_path %>
+            <ul class="sub">
+                <li>
+                    <%= link_to "Create New", new_campaign_path %>
+                </li>
+                <li><a href="form_validation.html" title="">Search</a></li>
+                <li><a href="form_editor.html" title="">Queue</a></li>
+            </ul>
+        </li>
+        <li class="charts"><a href="charts.html" title=""><span>Statistics</span></a></li>
+        <li class="ui"><a href="ui_elements.html" title=""><span>Address Book</span></a>
+            <ul class="sub">
+                <li><a href="403.html" title="">Groups</a></li>
+                <li><a href="404.html" title="">Add Subscriber</a></li>
+                <li><a href="405.html" title="">Import/Export</a></li>
+            </ul>
+        </li>
+        <li class="errors"><a href="#" title="" class="exp"><span>Templates</span><strong>&darr;</strong></a>
+            <ul class="sub">
+                <li><a href="403.html" title="">Browse</a></li>
+                <li><a href="404.html" title="">Import Template</a></li>
+                <li><a href="405.html" title="">Settings</a></li>
+                <li><a href="500.html" title="">Social Settings</a></li>
+            </ul>
+        </li>
+        <li class="files"><a href="file_manager.html" title=""><span>File manager</span></a></li>
+      
+    </ul>
+</div>

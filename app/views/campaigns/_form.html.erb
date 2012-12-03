@@ -1,0 +1,78 @@
+  <div class="intro-area">
+        <div class="wrapper">
+            <div class="page-title">
+                <h5>Create Campaign</h5>
+                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+            </div>
+             <div class="inner-navigation">
+                <ul>
+                    <li class="middle-user"><a title="" class="current_step"><span class="">Step 1</span></a>
+                        <ul class="middle-Submenu-1">
+                            <li><a href="#" title="">View Users</a></li>
+                            <li><a href="#" title="">Add New User</a></li>
+                            <li><a href="#" title="">Statistics</a></li>
+                            <li><a href="#" title="">Registration Settings</a></li>
+                        </ul>
+                    </li>
+                    <li class="middle-messages"><a title="" class="step_incomplete"><span class="">Step 2</span></a>
+                        <ul class="middle-Submenu-2">
+                            <li><a href="#" title="">New tickets<span class="number-sign">2</span></a></li>
+                            <li><a href="#" title="">Pending tickets<span class="number-sign">20</span></a></li>
+                            <li><a href="#" title="">Reported Bugs</a></li>
+                            <li><a href="#" title="">Closed tickets</a></li>
+                        </ul>
+                    </li>
+                    <li class="middle-Date"><a href="#" title="You can also use a tooltip" class="step_complete"><span class="">Step 3</span></a></li>
+                    <li class="middle-Downloads"><a title="" class="step_complete"><span class="">Step 4</span></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+
+
+<%= simple_form_for(@campaign, html: { :class => 'form'}) do |f| %>
+ <% if @campaign.errors.any? %>
+      <div class="container">
+          <div id="error_explanation">
+            <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+            <ul>
+            <% @campaign.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+      </div>
+    <% end %>
+
+            <fieldset>
+                <div class="widget">
+                    <div class="title"><img src="/assets/icons/light/list.png" alt="" class="title-icon" /><h6>Campaign Details</h6></div>
+                   
+                    <%= f.input :subject, :wrapper => :theme_input %>
+
+                    <%= f.input :from_name, :wrapper => :theme_input %>
+
+                    <%= f.input :from_email, :wrapper => :theme_input %>
+                 
+                    <%= f.input :replyto_mail, :wrapper => :theme_input %>
+                 
+                    <%= f.input :datesent, :wrapper => :theme_input %>
+                  
+                    <%= f.input :tags, :wrapper => :theme_input %>
+                 
+                    <%= f.input :user_id, :wrapper => :theme_input %>
+
+                     <div class="form-actions">
+                      <%= f.submit %>
+                    </div> 
+                </div>
+            </fieldset>
+            
+    <% end %>
+
+
