@@ -1,3 +1,4 @@
+
 == Welcome to RubyMail
 
 Developed with Ruby, RubyMail will be similar to CampaignMonitor/MailChimp emailing system.
